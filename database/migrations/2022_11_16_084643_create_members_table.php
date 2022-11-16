@@ -18,12 +18,12 @@ return new class extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('password');
-            $table->integer('age');
-            $table->string('sex');
-            $table->string('tel');
-            $table->string('position');
-            $table->string('faculty');
-            $table->string('Image');
+            $table->integer('age')->nullable();
+            $table->string('sex')->nullable();
+            $table->string('tel')->nullable();
+            $table->string('position')->nullable();
+            $table->string('faculty')->nullable();
+            $table->string('Image')->nullable();
             $table->timestamps();
         });
     }

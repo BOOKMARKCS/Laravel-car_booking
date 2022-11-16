@@ -3,7 +3,8 @@
 @section('content')
     <div class="container">
         <div class="row  justify-content-center">
-            <form action="">
+            <form action="{{ route('booking_status') }}" method="POST" enctype="multipart/form-data">
+                @csrf
                 <!-- component -->
                 {{-- RESERVATION NAME --}}
                 <div class="max-w-4xl mx-auto bg-white rounded-xl px-9 py-4 ">
@@ -15,6 +16,9 @@
                             <input
                                 class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3"
                                 id="name" type="text" placeholder="Reservation name.">
+                            @error('name')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     {{-- ORIGIN --}}
@@ -27,6 +31,9 @@
                             <input
                                 class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3"
                                 id="origin" type="text" placeholder="Origin">
+                            @error('origin')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     {{-- DEPARTURE TIME --}}
@@ -60,6 +67,9 @@
                             <input
                                 class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3"
                                 id="destination" type="text" placeholder="Destination">
+                            @error('destination')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     {{-- RETURN TIME --}}
@@ -92,7 +102,10 @@
                             </label>
                             <input
                                 class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3"
-                                id="number_p" type="number" placeholder="Number passenger">
+                                id="numbers" type="number" placeholder="Number passenger">
+                                @error('numbers')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                         </div>
                     </div>
 
