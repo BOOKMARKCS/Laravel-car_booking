@@ -27,6 +27,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/booking-status',[BookingController::class, 'booking_status'])->name('booking_status');
     Route::get('/edit-booking',[BookingController::class, 'edit_booking'])->name('edit_booking');
+    Route::get('/booking-history',[BookingController::class, 'booking_history'])->name('booking_history');
     Route::post('/video', function () {
         //
     });
