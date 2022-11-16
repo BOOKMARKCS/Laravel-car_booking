@@ -1,16 +1,13 @@
-{{-- <script src="https://cdn.tailwindcss.com"></script> --}}
-
 @extends('layouts.app')
 
 @section('content')
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row  justify-content-center">
             <form action="">
-
                 <!-- component -->
                 {{-- RESERVATION NAME --}}
-                <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2">
-                    <div class="-mx-3 md:flex mb-6">
+                <div class="max-w-4xl mx-auto bg-white rounded-xl px-9 py-4 ">
+                    <div class="-mx-3 md:flex mb-3">
                         <div class="md:w-full px-3"> <label
                                 class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="name">
                                 Reservation name
@@ -21,7 +18,7 @@
                         </div>
                     </div>
                     {{-- ORIGIN --}}
-                    <div class="-mx-3 md:flex mb-6">
+                    <div class="-mx-3 md:flex mb-3">
                         <div class="md:w-full px-3"> <label
                                 class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
                                 for="name">
@@ -33,8 +30,8 @@
                         </div>
                     </div>
                     {{-- DEPARTURE TIME --}}
-                    <div class="-mx-3 md:flex mb-6">
-                        <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+                    <div class="-mx-3 md:flex mb-3">
+                        <div class="md:w-1/2 px-3  md:mb-0">
                             <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
                                 for="grid-first-name">
                                 Date
@@ -54,7 +51,7 @@
                         </div>
                     </div>
                     {{-- DESTINATION --}}
-                    <div class="-mx-3 md:flex mb-6">
+                    <div class="-mx-3 md:flex mb-3">
                         <div class="md:w-full px-3">
                             <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
                                 for="grid-password">
@@ -66,8 +63,8 @@
                         </div>
                     </div>
                     {{-- RETURN TIME --}}
-                    <div class="-mx-3 md:flex mb-6">
-                        <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+                    <div class="-mx-3 md:flex mb-3">
+                        <div class="md:w-1/2 px-3 md:mb-0">
                             <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
                                 for="grid-first-name">
                                 Date
@@ -87,7 +84,7 @@
                         </div>
                     </div>
                     {{-- NUMBER PASSENGERS --}}
-                    <div class="-mx-3 md:flex mb-6">
+                    <div class="-mx-3 md:flex mb-3">
                         <div class="md:w-full px-3">
                             <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
                                 for="grid-password">
@@ -106,7 +103,7 @@
                     </div>
 
                     {{-- <div class="-mx-3 md:flex mb-2">
-                    <div class="md:w-1/2 px-3 mb-6 md:mb-0">
+                    <div class="md:w-1/2 px-3 mb-3 md:mb-0">
                         <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
                         for="grid-city">
                         City
