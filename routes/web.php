@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\BookingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +22,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/booking',[BookingController::class, 'booking'])->name('booking');
+
+    Route::get('/booking-status',[BookingController::class, 'booking_status'])->name('booking_status');
+    Route::get('/edit-booking',[BookingController::class, 'edit_booking'])->name('edit_booking');
+    Route::post('/video', function () {
+        //
+    });
+});
