@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('position')->nullable();
             $table->string('faculty')->nullable();
             $table->string('Image')->nullable();
+            $table->string('is_admin')->nullable();
             $table->timestamps();
         });
     }
