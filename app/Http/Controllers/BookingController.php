@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Booking;
+use Illuminate\Support\Facades\DB;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class BookingController extends Controller
 {
@@ -11,16 +14,70 @@ class BookingController extends Controller
     {
         return view('user.booking');
     }
-    public function booking_status()
+    public function status()
     {
-        return view('user.booking_status');
+        $data['bookings'] = Booking::orderby('id', 'desc')->paginate(5);
+        return view('user.booking_status', $data);
     }
-    public function edit_booking()
+
+    public function history()
     {
-        return view('user.edit-booking');
+        $data['bookings'] = booking::orderby('id', 'asc')->paginate(5);
+        return view('user.booking_history', $data);
     }
-    public function booking_history()
+
+
+    //
+    public function store(Request $request)
     {
-        return view('user.booking_history');
+        $request->validate([
+            'name' => 'required',
+            'origin' => 'required',
+            'destination' => 'required',
+            'd_date' => 'required',
+            'd_time' => 'required',
+            'r_date' => 'required',
+            'r_time' => 'required',
+            'numbers' => 'required',
+        ]);
+        $booking = new Booking;
+        $booking->name = $request->name;
+        $booking->origin = $request->origin;
+        $booking->destination = $request->destination;
+        $booking->dt_origin = $request->d_date . ' ' . $request->d_time;
+        $booking->dt_destination = $request->r_date . ' ' . $request->r_time;
+        $booking->numbers = $request->numbers;
+        $booking->save();
+        return redirect()->route('booking_status')->with('success', 'Booking has been created.');
+    }
+    public function edit($id) {
+        $booking = Booking::find($id);
+        return view('user.edit-booking', compact('booking'));
+    }
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required',
+            'origin' => 'required',
+            'destination' => 'required',
+            'dt_origin' => 'required',
+            'dt_destination' => 'required',
+            'numbers' => 'required',
+        ]);
+        $booking = Booking::find($id);
+        $booking->name = $request->name;
+        $booking->origin = $request->origin;
+        $booking->destination = $request->destination;
+        $booking->dt_origin = $request->dt_origin;
+        $booking->dt_destination = $request->dt_destination;
+        $booking->numbers = $request->numbers;
+        $booking->save();
+        return redirect()->route('booking_status')->with('success', 'booking has been updated successfully.');
+    }
+    public function destroy($id)
+    {
+        $booking = Booking::find($id);
+        $booking->delete();
+        return redirect()->route('booking_status')->with('success', 'booking has been deleted successfully.');
     }
 }

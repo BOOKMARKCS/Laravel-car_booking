@@ -3,7 +3,8 @@
 @section('content')
     <div class="container">
         <div class="row  justify-content-center">
-            <form action="">
+            <form method="POST" action="/store">
+                @csrf
                 <!-- component -->
                 {{-- RESERVATION NAME --}}
                 <div class="max-w-4xl mx-auto bg-white rounded-xl px-9 py-4 ">
@@ -13,20 +14,28 @@
                                 Reservation name
                             </label>
                             <input
-                                class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3"
-                                id="name" type="text" placeholder="Reservation name.">
+                                class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3 form-control @error('name') is-invalid @enderror"
+                                id="name" name="name" type="text" value="{{ old('name') }}"
+                                placeholder="Reservation name.">
+                            @error('name')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     {{-- ORIGIN --}}
                     <div class="-mx-3 md:flex mb-3">
                         <div class="md:w-full px-3"> <label
-                                class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
-                                for="name">
+                            class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
+                                for="origin">
                                 Origin
                             </label>
                             <input
-                                class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3"
-                                id="origin" type="text" placeholder="Origin">
+                                class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3 form-control @error('origin') is-invalid @enderror"
+                                id="origin" name="origin" type="text" value="{{ old('origin') }}"
+                                placeholder="Origin">
+                            @error('origin')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     {{-- DEPARTURE TIME --}}
@@ -38,7 +47,7 @@
                             </label>
                             <input
                                 class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3"
-                                id="d_date" type="date">
+                                id="d_date" name="d_date" type="date">
                         </div>
                         <div class="md:w-1/2 px-3">
                             <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
@@ -47,7 +56,7 @@
                             </label>
                             <input
                                 class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4"
-                                id="d_time" type="time">
+                                id="d_time" name="d_time" type="time">
                         </div>
                     </div>
                     {{-- DESTINATION --}}
@@ -58,8 +67,11 @@
                                 Destination
                             </label>
                             <input
-                                class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3"
-                                id="destination" type="text" placeholder="Destination">
+                                class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3 form-control @error('destination') is-invalid @enderror"
+                                id="destination" name="destination" type="text" placeholder="Destination">
+                            @error('destination')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     {{-- RETURN TIME --}}
@@ -71,7 +83,7 @@
                             </label>
                             <input
                                 class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3"
-                                id="r_date" type="date">
+                                id="r_date" name="r_date" type="date">
                         </div>
                         <div class="md:w-1/2 px-3">
                             <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
@@ -80,7 +92,7 @@
                             </label>
                             <input
                                 class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4"
-                                id="r_time" type="time">
+                                id="r_time" name="r_time" type="time">
                         </div>
                     </div>
                     {{-- NUMBER PASSENGERS --}}
@@ -91,8 +103,11 @@
                                 Number passenger
                             </label>
                             <input
-                                class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3"
-                                id="number_p" type="number" placeholder="Number passenger">
+                                class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3 form-control @error('numbers') is-invalid @enderror"
+                                id="numbers" name="numbers" type="number" placeholder="Number passenger">
+                            @error('numbers')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
 

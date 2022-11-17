@@ -18,13 +18,12 @@ return new class extends Migration
             $table->string('car_registration');
             $table->string('model');
             $table->string('color');
-            $table->string('status');
             $table->string('type');
             $table->string('acr_date');
             $table->string('act_expiration_date');
             $table->string('oil');
-            $table->string('image');
-            $table->boolean('car_status');
+            $table->string('image')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

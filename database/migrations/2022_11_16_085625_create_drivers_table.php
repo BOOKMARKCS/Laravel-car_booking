@@ -20,13 +20,13 @@ return new class extends Migration
             $table->string('password');
             $table->integer('age');
             $table->string('sex');
-            $table->string('position');
-            $table->string('faculy');
+            $table->string('position')->nullable();
+            $table->string('faculy')->nullable();
             $table->string('tel');
             $table->string('driver_license');
             $table->string('driver_license_expiration');
-            $table->string('image');
-            $table->boolean('status');
+            $table->string('image')->nullable();
+            $table->boolean('status')->nullable();
             $table->timestamps();
         });
     }

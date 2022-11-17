@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\Models\User;
+use App\Models\Member;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Validation\Rules\Password;
 class RegisterController extends Controller
 {
     /*
@@ -50,9 +50,11 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required|unique:members|email',
+            'password' => 'required|confirmed|min:8',
+            'tel' => 'required|numeric|digits:10',
         ]);
     }
 
@@ -64,10 +66,11 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
+        return Member::create([
+            'name' => $data['name'] . ' ' . $data['last_name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'tel' => $data['tel'],
         ]);
     }
 }
