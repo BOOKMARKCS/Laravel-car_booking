@@ -24,11 +24,10 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::middleware(['auth'])->group(function () {
     Route::get('/booking',[BookingController::class, 'booking'])->name('booking');
-
     Route::get('/booking-status',[BookingController::class, 'booking_status'])->name('booking_status');
     Route::get('/edit-booking',[BookingController::class, 'edit_booking'])->name('edit_booking');
     Route::get('/booking-history',[BookingController::class, 'booking_history'])->name('booking_history');
-    Route::post('/video', function () {
-        //
-    });
+
+    Route::post('/store', [BookingController::class, 'store'])->name('store');
+
 });

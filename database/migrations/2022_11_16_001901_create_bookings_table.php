@@ -19,11 +19,12 @@ return new class extends Migration
             $table->foreignId('car_id')->nullable()->constrained('cars');
             $table->foreignId('driver_id')->nullable()->constrained('drivers');
             $table->string('name');
-            $table->string('description');
+            $table->string('origin');
+            $table->string('destination');
             $table->string('dt_origin');
             $table->string('dt_destination');
             $table->integer('numbers');
-            $table->string('distance')->nullable();
+            $table->integer('distance')->nullable();
             $table->boolean('status')->nullable();
             $table->timestamps();
         });
