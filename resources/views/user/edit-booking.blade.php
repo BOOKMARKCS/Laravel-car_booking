@@ -2,89 +2,89 @@
 
 @section('content')
     <div class="container">
-        <div class="row  justify-content-center">
+        <div class="row justify-content-center">
 
             <form action="/update-booking/{{ $booking->id }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <!-- component -->
                 {{-- RESERVATION NAME --}}
-                <div class="max-w-4xl mx-auto bg-white rounded-xl px-9 py-4 ">
-                    <div class="-mx-3 md:flex mb-3">
-                        <div class="md:w-full px-3"> <label
-                                class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="name">
+                <div class="max-w-4xl py-4 mx-auto bg-white rounded-xl px-9 ">
+                    <div class="mb-3 -mx-3 md:flex">
+                        <div class="px-3 md:w-full"> <label
+                                class="block mb-2 text-xs font-bold tracking-wide uppercase text-grey-darker" for="name">
                                 Reservation name
                             </label>
                             <input
-                                class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3"
+                                class="block w-full px-4 py-3 mb-3 border rounded appearance-none bg-grey-lighter text-grey-darker border-grey-lighter"
                                 id="name" name="name" type="text" value="{{ $booking->name }}" placeholder="Reservation name.">
                         </div>
                     </div>
                     {{-- ORIGIN --}}
-                    <div class="-mx-3 md:flex mb-3">
-                        <div class="md:w-full px-3"> <label
-                                class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
+                    <div class="mb-3 -mx-3 md:flex">
+                        <div class="px-3 md:w-full"> <label
+                                class="block mb-2 text-xs font-bold tracking-wide uppercase text-grey-darker"
                                 for="name">
                                 Origin
                             </label>
                             <input
-                                class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3"
+                                class="block w-full px-4 py-3 mb-3 border rounded appearance-none bg-grey-lighter text-grey-darker border-grey-lighter"
                                 id="origin" name="origin" type="text" value="{{ $booking->origin }}" placeholder="Origin">
                         </div>
                     </div>
                     {{-- DEPARTURE TIME --}}
-                    <div class="-mx-3 md:flex mb-3">
-                        <div class="md:w-full px-3">
-                            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
+                    <div class="mb-3 -mx-3 md:flex">
+                        <div class="px-3 md:w-full">
+                            <label class="block mb-2 text-xs font-bold tracking-wide uppercase text-grey-darker"
                                 for="grid-first-name">
                                 Date
                             </label>
                             <input
-                                class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3"
+                                class="block w-full px-4 py-3 mb-3 border rounded appearance-none bg-grey-lighter text-grey-darker border-red"
                                 id="dt_origin" name="dt_origin" type="datetime-local" value="{{ date('Y-m-d H:i:s', strtotime($booking->dt_origin)) }}">
                         </div>
                     </div>
                     {{-- DESTINATION --}}
-                    <div class="-mx-3 md:flex mb-3">
-                        <div class="md:w-full px-3">
-                            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
+                    <div class="mb-3 -mx-3 md:flex">
+                        <div class="px-3 md:w-full">
+                            <label class="block mb-2 text-xs font-bold tracking-wide uppercase text-grey-darker"
                                 for="grid-password">
                                 Destination
                             </label>
                             <input
-                                class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3"
+                                class="block w-full px-4 py-3 mb-3 border rounded appearance-none bg-grey-lighter text-grey-darker border-grey-lighter"
                                 id="destination" name="destination" value="{{ $booking->destination }}" type="text" placeholder="Destination">
                         </div>
                     </div>
                     {{-- RETURN TIME --}}
-                    <div class="-mx-3 md:flex mb-3">
-                        <div class="md:w-full px-3 ">
-                            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
+                    <div class="mb-3 -mx-3 md:flex">
+                        <div class="px-3 md:w-full ">
+                            <label class="block mb-2 text-xs font-bold tracking-wide uppercase text-grey-darker"
                                 for="grid-first-name">
                                 Date
                             </label>
                             <input
-                                class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3"
+                                class="block w-full px-4 py-3 mb-3 border rounded appearance-none bg-grey-lighter text-grey-darker border-red"
                                 id="dt_destination" name="dt_destination" value="{{ date('Y-m-d H:i:s', strtotime($booking->dt_destination)) }}" type="datetime-local">
                         </div>
 
                     </div>
                     {{-- NUMBER PASSENGERS --}}
-                    <div class="-mx-3 md:flex mb-3">
-                        <div class="md:w-full px-3">
-                            <label class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
+                    <div class="mb-3 -mx-3 md:flex">
+                        <div class="px-3 md:w-full">
+                            <label class="block mb-2 text-xs font-bold tracking-wide uppercase text-grey-darker"
                                 for="grid-password">
                                 Number passenger
                             </label>
                             <input
-                                class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3"
+                                class="block w-full px-4 py-3 mb-3 border rounded appearance-none bg-grey-lighter text-grey-darker border-grey-lighter"
                                 id="numbers" name="numbers" type="number" value="{{ $booking->numbers }}" placeholder="Number passenger">
                         </div>
                     </div>
 
                     <div>
                         <button type="submit" role="button"
-                            class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full">SENT
+                            class="w-full py-4 text-sm font-semibold leading-none text-white bg-indigo-700 border rounded focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:outline-none hover:bg-indigo-600">SENT
                             A BOOKING REQUEST </button>
                     </div>
                 </div>

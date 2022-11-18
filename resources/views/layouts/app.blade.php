@@ -17,176 +17,316 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     @vite('resources/css/app.css')
-
+    {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
 </head>
 
-<body>
-    <div id="app">
+<body class="bg-slate-200">
+    {{-- <div class="grid h-full grid-cols-7 grid-row-2"> --}}
+    <div id="app" class="row-start-1 ">
 
-        <!-- component -->
-        <nav class=" bg-white w-full flex relative justify-between items-center mx-auto px-8 h-20">
-            <!-- logo -->
-            <div class="inline-flex">
-                <a class="_o6689fn" href="/">
-                    <div class="hidden md:block">
-                        <svg width="102" height="32" fill="currentcolor" style="display: block">
-                            <path
-                                d="M29.24 22.68c-.16-.39-.31-.8-.47-1.15l-.74-1.67-.03-.03c-2.2-4.8-4.55-9.68-7.04-14.48l-.1-.2c-.25-.47-.5-.99-.76-1.47-.32-.57-.63-1.18-1.14-1.76a5.3 5.3 0 00-8.2 0c-.47.58-.82 1.19-1.14 1.76-.25.52-.5 1.03-.76 1.5l-.1.2c-2.45 4.8-4.84 9.68-7.04 14.48l-.06.06c-.22.52-.48 1.06-.73 1.64-.16.35-.32.73-.48 1.15a6.8 6.8 0 007.2 9.23 8.38 8.38 0 003.18-1.1c1.3-.73 2.55-1.79 3.95-3.32 1.4 1.53 2.68 2.59 3.95 3.33A8.38 8.38 0 0022.75 32a6.79 6.79 0 006.75-5.83 5.94 5.94 0 00-.26-3.5zm-14.36 1.66c-1.72-2.2-2.84-4.22-3.22-5.95a5.2 5.2 0 01-.1-1.96c.07-.51.26-.96.52-1.34.6-.87 1.65-1.41 2.8-1.41a3.3 3.3 0 012.8 1.4c.26.4.45.84.51 1.35.1.58.06 1.25-.1 1.96-.38 1.7-1.5 3.74-3.21 5.95zm12.74 1.48a4.76 4.76 0 01-2.9 3.75c-.76.32-1.6.41-2.42.32-.8-.1-1.6-.36-2.42-.84a15.64 15.64 0 01-3.63-3.1c2.1-2.6 3.37-4.97 3.85-7.08.23-1 .26-1.9.16-2.73a5.53 5.53 0 00-.86-2.2 5.36 5.36 0 00-4.49-2.28c-1.85 0-3.5.86-4.5 2.27a5.18 5.18 0 00-.85 2.21c-.13.84-.1 1.77.16 2.73.48 2.11 1.78 4.51 3.85 7.1a14.33 14.33 0 01-3.63 3.12c-.83.48-1.62.73-2.42.83a4.76 4.76 0 01-5.32-4.07c-.1-.8-.03-1.6.29-2.5.1-.32.25-.64.41-1.02.22-.52.48-1.06.73-1.6l.04-.07c2.16-4.77 4.52-9.64 6.97-14.41l.1-.2c.25-.48.5-.99.76-1.47.26-.51.54-1 .9-1.4a3.32 3.32 0 015.09 0c.35.4.64.89.9 1.4.25.48.5 1 .76 1.47l.1.2c2.44 4.77 4.8 9.64 7 14.41l.03.03c.26.52.48 1.1.73 1.6.16.39.32.7.42 1.03.19.9.29 1.7.19 2.5zM41.54 24.12a5.02 5.02 0 01-3.95-1.83 6.55 6.55 0 01-1.6-4.48 6.96 6.96 0 011.66-4.58 5.3 5.3 0 014.08-1.86 4.3 4.3 0 013.7 1.92l.1-1.57h2.92V23.8h-2.93l-.1-1.76a4.52 4.52 0 01-3.88 2.08zm.76-2.88c.58 0 1.09-.16 1.57-.45.44-.32.8-.74 1.08-1.25.25-.51.38-1.12.38-1.8a3.42 3.42 0 00-1.47-3.04 2.95 2.95 0 00-3.12 0c-.44.32-.8.74-1.08 1.25a4.01 4.01 0 00-.38 1.8 3.42 3.42 0 001.47 3.04c.47.29.98.45 1.55.45zM53.45 8.46c0 .35-.06.67-.22.93-.16.25-.38.48-.67.64-.29.16-.6.22-.92.22-.32 0-.64-.06-.93-.22a1.84 1.84 0 01-.67-.64 1.82 1.82 0 01-.22-.93c0-.36.07-.68.22-.93.16-.3.39-.48.67-.64.29-.16.6-.23.93-.23a1.84 1.84 0 011.6.86 2 2 0 01.21.94zm-3.4 15.3V11.7h3.18v12.08h-3.19zm11.68-8.9v.04c-.15-.07-.35-.1-.5-.13-.2-.04-.36-.04-.55-.04-.89 0-1.56.26-2 .8-.48.55-.7 1.32-.7 2.31v5.93h-3.19V11.69h2.93l.1 1.83c.32-.64.7-1.12 1.24-1.48a3.1 3.1 0 011.81-.5c.23 0 .45.02.64.06.1.03.16.03.22.06v3.2zm1.28 8.9V6.74h3.18v6.5c.45-.58.96-1.03 1.6-1.38a5.02 5.02 0 016.08 1.31 6.55 6.55 0 011.6 4.49 6.96 6.96 0 01-1.66 4.58 5.3 5.3 0 01-4.08 1.86 4.3 4.3 0 01-3.7-1.92l-.1 1.57-2.92.03zm6.15-2.52c.57 0 1.08-.16 1.56-.45.44-.32.8-.74 1.08-1.25.26-.51.38-1.12.38-1.8 0-.67-.12-1.28-.38-1.79a3.75 3.75 0 00-1.08-1.25 2.95 2.95 0 00-3.12 0c-.45.32-.8.74-1.09 1.25a4.01 4.01 0 00-.38 1.8 3.42 3.42 0 001.47 3.04c.47.29.98.45 1.56.45zm7.51 2.53V11.69h2.93l.1 1.57a3.96 3.96 0 013.54-1.89 4.1 4.1 0 013.82 2.44c.35.76.54 1.7.54 2.75v7.24h-3.19v-6.82c0-.84-.19-1.5-.57-1.99-.38-.48-.9-.74-1.56-.74-.48 0-.9.1-1.27.32-.35.23-.64.52-.86.93a2.7 2.7 0 00-.32 1.35v6.92h-3.16zm12.52 0V6.73h3.19v6.5a4.67 4.67 0 013.73-1.89 5.02 5.02 0 013.95 1.83 6.57 6.57 0 011.59 4.48 6.95 6.95 0 01-1.66 4.58 5.3 5.3 0 01-4.08 1.86 4.3 4.3 0 01-3.7-1.92l-.09 1.57-2.93.03zm6.18-2.53c.58 0 1.09-.16 1.56-.45.45-.32.8-.74 1.09-1.25.25-.51.38-1.12.38-1.8a3.42 3.42 0 00-1.47-3.04 2.95 2.95 0 00-3.12 0c-.44.32-.8.74-1.08 1.25a3.63 3.63 0 00-.38 1.8 3.42 3.42 0 001.47 3.04c.47.29.95.45 1.55.45z">
-                            </path>
-                        </svg>
-                    </div>
-                    <div class="block md:hidden">
-                        <svg width="30" height="32" fill="currentcolor" style="display: block">
-                            <path
-                                d="M29.24 22.68c-.16-.39-.31-.8-.47-1.15l-.74-1.67-.03-.03c-2.2-4.8-4.55-9.68-7.04-14.48l-.1-.2c-.25-.47-.5-.99-.76-1.47-.32-.57-.63-1.18-1.14-1.76a5.3 5.3 0 00-8.2 0c-.47.58-.82 1.19-1.14 1.76-.25.52-.5 1.03-.76 1.5l-.1.2c-2.45 4.8-4.84 9.68-7.04 14.48l-.06.06c-.22.52-.48 1.06-.73 1.64-.16.35-.32.73-.48 1.15a6.8 6.8 0 007.2 9.23 8.38 8.38 0 003.18-1.1c1.3-.73 2.55-1.79 3.95-3.32 1.4 1.53 2.68 2.59 3.95 3.33A8.38 8.38 0 0022.75 32a6.79 6.79 0 006.75-5.83 5.94 5.94 0 00-.26-3.5zm-14.36 1.66c-1.72-2.2-2.84-4.22-3.22-5.95a5.2 5.2 0 01-.1-1.96c.07-.51.26-.96.52-1.34.6-.87 1.65-1.41 2.8-1.41a3.3 3.3 0 012.8 1.4c.26.4.45.84.51 1.35.1.58.06 1.25-.1 1.96-.38 1.7-1.5 3.74-3.21 5.95zm12.74 1.48a4.76 4.76 0 01-2.9 3.75c-.76.32-1.6.41-2.42.32-.8-.1-1.6-.36-2.42-.84a15.64 15.64 0 01-3.63-3.1c2.1-2.6 3.37-4.97 3.85-7.08.23-1 .26-1.9.16-2.73a5.53 5.53 0 00-.86-2.2 5.36 5.36 0 00-4.49-2.28c-1.85 0-3.5.86-4.5 2.27a5.18 5.18 0 00-.85 2.21c-.13.84-.1 1.77.16 2.73.48 2.11 1.78 4.51 3.85 7.1a14.33 14.33 0 01-3.63 3.12c-.83.48-1.62.73-2.42.83a4.76 4.76 0 01-5.32-4.07c-.1-.8-.03-1.6.29-2.5.1-.32.25-.64.41-1.02.22-.52.48-1.06.73-1.6l.04-.07c2.16-4.77 4.52-9.64 6.97-14.41l.1-.2c.25-.48.5-.99.76-1.47.26-.51.54-1 .9-1.4a3.32 3.32 0 015.09 0c.35.4.64.89.9 1.4.25.48.5 1 .76 1.47l.1.2c2.44 4.77 4.8 9.64 7 14.41l.03.03c.26.52.48 1.1.73 1.6.16.39.32.7.42 1.03.19.9.29 1.7.19 2.5z">
-                            </path>
-                        </svg>
-                    </div>
-                </a>
-            </div>
-
-            <!-- end logo -->
-
-            <!-- search bar -->
-            <div class="hidden sm:block flex-shrink flex-grow-0 justify-start px-2">
-                <div class="inline-block">
-                    <div class="inline-flex items-center max-w-full">
-                        <button
-                            class="flex items-center flex-grow-0 flex-shrink pl-2 relative w-60 border rounded-full px-1  py-1"
-                            type="button">
-                            <div class="block flex-grow flex-shrink overflow-hidden">Start your search</div>
-                            <div class="flex items-center justify-center relative  h-8 w-8 rounded-full">
-                                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                                    role="presentation" focusable="false"
-                                    style="
-                                display: block;
-                                fill: none;
-                                height: 12px;
-                                width: 12px;
-                                stroke: currentcolor;
-                                stroke-width: 5.33333;
-                                overflow: visible;
-                            ">
-                                    <g fill="none">
-                                        <path
-                                            d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9">
-                                        </path>
-                                    </g>
-                                </svg>
-                            </div>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!-- end search bar -->
-
-            <!-- login -->
-
+        <div class="">
+            <!-- Right Side Of Navbar -->
             <!-- Authentication Links -->
-
             @guest
-                <div class="flex justify-end items-center relative">
+                <nav class="bg-white border-gray-200 px-2 md:px-4 py-2.5 dark:bg-gray-900">
+                    <div class="flex flex-wrap items-center justify-between mx-auto max-w-screen-2xl">
+                        <a href="https://flowbite.com" class="flex items-center">
+                            <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 mr-3 sm:h-9" alt="" />
+                            <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Allowed
+                            </span>
+                        </a>
+                        <div class="flex items-center md:order-2">
+                            @if (Route::has('login'))
+                                <a href="{{ route('login') }}"
+                                    class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 mr-1 md:mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Login</a>
+                            @endif
 
-                    @if (Route::has('login'))
-                        <button
-                            class="inline relative nav-item  justify-center w-full px-6 py-2  text-blue-500 border border-blue-500 rounded-md md:mt-0 md:w-auto md:mx-2 dark:border-blue-400 dark:text-blue-400 focus:outline-none">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </button> {{-- <div class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}"
+                                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 mr-1 md:mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Sign
+                                    up</a>
+                            @endif
 
-                    </div> --}}
-                    @endif
-
-                    @if (Route::has('register'))
-                        <button
-                            class="inline relative nav-item justify-center w-full px-3 py-2 text-white bg-blue-500 rounded-md mt-0 md:w-auto md:mx-2 focus:outline-none">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        </button>
-                    @endif
-                 
-                </div>
+                        </div>
+                    </div>
+                </nav>
             @else
-                <div class="flex-initial">
-                    <div class="flex justify-end items-center relative">
-
-                        <div class="flex mr-4 items-center">
-                            <a class="inline-block py-2 px-3 hover:bg-gray-200 rounded-full" href="#">
-                                <div class="flex items-center relative cursor-pointer whitespace-nowrap">Become a host
-                                </div>
-                            </a>
-                            <div class="block relative">
-                                <button type="button"
-                                    class="inline-block py-2 px-3 hover:bg-gray-200 rounded-full relative ">
-                                    <div class="flex items-center h-5">
-                                        <div class="_xpkakx">
-                                            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                                                role="presentation" focusable="false"
-                                                style="display: block; height: 16px; width: 16px; fill: currentcolor;">
-                                                <path
-                                                    d="m8.002.25a7.77 7.77 0 0 1 7.748 7.776 7.75 7.75 0 0 1 -7.521 7.72l-.246.004a7.75 7.75 0 0 1 -7.73-7.513l-.003-.245a7.75 7.75 0 0 1 7.752-7.742zm1.949 8.5h-3.903c.155 2.897 1.176 5.343 1.886 5.493l.068.007c.68-.002 1.72-2.365 1.932-5.23zm4.255 0h-2.752c-.091 1.96-.53 3.783-1.188 5.076a6.257 6.257 0 0 0 3.905-4.829zm-9.661 0h-2.75a6.257 6.257 0 0 0 3.934 5.075c-.615-1.208-1.036-2.875-1.162-4.686l-.022-.39zm1.188-6.576-.115.046a6.257 6.257 0 0 0 -3.823 5.03h2.75c.085-1.83.471-3.54 1.059-4.81zm2.262-.424c-.702.002-1.784 2.512-1.947 5.5h3.904c-.156-2.903-1.178-5.343-1.892-5.494l-.065-.007zm2.28.432.023.05c.643 1.288 1.069 3.084 1.157 5.018h2.748a6.275 6.275 0 0 0 -3.929-5.068z">
-                                                </path>
+                <div class="fixed h-16">
+                    <nav class="fixed w-full bg-white">
+                        <div class="max-w-full px-20 mx-auto sm:px-6 lg:px-8">
+                            <div class="flex items-center justify-end h-16">
+                                <div class="hidden md:block">
+                                    <div class="flex items-center ml-4 md:ml-6">
+                                        <button type="button"
+                                            class="p-1 text-gray-400 bg-gray-800 rounded-full hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                                            <span class="sr-only">View notifications</span>
+                                            <!-- Heroicon name: outline/bell -->
+                                            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                aria-hidden="true">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
                                             </svg>
+                                        </button>
+
+                                        <!-- Profile dropdown -->
+                                        <div class="relative ml-5">
+                                            <div class="nav-item dropdown ">
+                                                <a id="navbarDropdown" class="" href="#" role="button"
+                                                    data-bs-toggle="dropdown">
+                                                    <span class="sr-only">Open user menu</span>
+                                                    <img class="w-8 h-8 mr-10 rounded-full"
+                                                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                                        alt="">
+                                                </a>
+
+                                                <div class="z-10 hidden py-1 mt-2 text-center bg-white rounded-md dropdown-menu "
+                                                    role="menu" aria-orientation="vertical"
+                                                    aria-labelledby="navbarDropdown">
+                                                    <!-- Active: "bg-gray-100", Not Active: "" -->
+
+                                                    <a href="{{ route('logout') }}" class="block py-2 text-sm text-gray-700"
+                                                        role="menuitem" tabindex="-1" id="user-menu-item-2"
+                                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                        Sign out
+                                                    </a>
+                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                        class="d-none">
+                                                        @csrf
+                                                    </form>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </button>
+
+                                </div>
                             </div>
                         </div>
+                    </nav>
 
-                        <div class="block">
-                            <div class="inline relative nav-item dropdown">
 
-                                <button id="dropdownDividerButton" data-dropdown-toggle="dropdownDivider" type="button"
-                                    class="inline-flex items-center relative px-2 border rounded-full hover:shadow-lg nav-link"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <div class="pl-1">
-                                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                                            role="presentation" focusable="false"
-                                            style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3; overflow: visible;">
-                                            <g fill="none" fill-rule="nonzero">
-                                                <path d="m2 16h28"></path>
-                                                <path d="m2 24h28"></path>
-                                                <path d="m2 8h28"></path>
-                                            </g>
-                                        </svg>
-                                    </div>
 
-                                    <div class="block flex-grow-0 flex-shrink-0 h-10 w-12 pl-5">
-                                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                                            role="presentation" focusable="false"
-                                            style="display: block; height: 100%; width: 100%; fill: currentcolor;">
-                                            <path
-                                                d="m16 .7c-8.437 0-15.3 6.863-15.3 15.3s6.863 15.3 15.3 15.3 15.3-6.863 15.3-15.3-6.863-15.3-15.3-15.3zm0 28c-4.021 0-7.605-1.884-9.933-4.81a12.425 12.425 0 0 1 6.451-4.4 6.507 6.507 0 0 1 -3.018-5.49c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5a6.513 6.513 0 0 1 -3.019 5.491 12.42 12.42 0 0 1 6.452 4.4c-2.328 2.925-5.912 4.809-9.933 4.809z">
-                                            </path>
-                                        </svg>
-                                    </div>
-                                </button>
-                          
-                                <div class="hidden bg-white rounded-xl mt-2  divide-gray-100 shadow dark:bg-gray-700 dark:divide-"
-                                    id="dropdownDivider">
-                                    <a class="block h-10 py-2 px-3 hover:bg-gray-100 hover:rounded-xl dark:hover:bg-gray-600 dark:hover:text-white"
-                                        href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }} </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="">
-                                        @csrf
-                                    </form>
-                                </div>
+                    <div id="sidebar"
+                        class=" fixed flex flex-col  z-50 left-60 top-0 lg:static lg:left-auto lg:top-auto lg:translate-x-0 h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar w-64 lg:w-20 lg:sidebar-expanded:!w-64 2xl:!w-64 shrink-0 bg-slate-800 p-4 transition-all duration-200 ease-in-out -translate-x-64">
+                        <div class="flex justify-between pr-3 mb-10 sm:px-2">
+                            <button class="lg:hidden text-slate-500 hover:text-slate-400" aria-controls="sidebar"
+                                aria-expanded="false">
+                                <span class="sr-only">Close sidebar</span>
+                                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.7 18.7l1.4-1.4L7.8 13H20v-2H7.8l4.3-4.3-1.4-1.4L4 12z">
 
+                                    </path>
+                                </svg></button>
+                            <a aria-current="page" class="flex active" href="/"><svg width="32" height="32"
+                                    viewBox="0 0 32 32">
+                                    <defs>
+                                        <linearGradient x1="28.538%" y1="20.229%" x2="100%" y2="108.156%"
+                                            id="logo-a">
+                                            <stop stop-color="#A5B4FC" stop-opacity="0" offset="0%"></stop>
+                                            <stop stop-color="#A5B4FC" offset="100%"></stop>
+                                        </linearGradient>
+                                        <linearGradient x1="88.638%" y1="29.267%" x2="22.42%" y2="100%"
+                                            id="logo-b">
+                                            <stop stop-color="#38BDF8" stop-opacity="0" offset="0%"></stop>
+                                            <stop stop-color="#38BDF8" offset="100%"></stop>
+                                        </linearGradient>
+                                    </defs>
+                                    <rect fill="#6366F1" width="32" height="32" rx="16"></rect>
+                                    <path
+                                        d="M18.277.16C26.035 1.267 32 7.938 32 16c0 8.837-7.163 16-16 16a15.937 15.937 0 01-10.426-3.863L18.277.161z"
+                                        fill="#4F46E5"></path>
+                                    <path
+                                        d="M7.404 2.503l18.339 26.19A15.93 15.93 0 0116 32C7.163 32 0 24.837 0 16 0 10.327 2.952 5.344 7.404 2.503z"
+                                        fill="url(#logo-a)"></path>
+                                    <path
+                                        d="M2.223 24.14L29.777 7.86A15.926 15.926 0 0132 16c0 8.837-7.163 16-16 16-5.864 0-10.991-3.154-13.777-7.86z"
+                                        fill="url(#logo-b)"></path>
+                                </svg>
+                                <span
+                                    class="self-center ml-6 text-xl font-bold text-white whitespace-nowrap dark:text-white">
+                                    Allowed
+                                </span>
+
+                            </a>
+                        </div>
+                        <div class="space-y-8">
+                            <div>
+                                <h3 class="pl-3 text-xs font-semibold uppercase text-slate-500"><span
+                                        class="hidden w-6 text-center lg:block lg:sidebar-expanded:hidden 2xl:hidden"
+                                        aria-hidden="true">•••</span><span
+                                        class="lg:hidden lg:sidebar-expanded:block 2xl:block">Pages</span></h3>
+                                <ul class="mt-3">
+                                    <li class="px-3 py-2 rounded-sm mb-0.5 last:mb-0 bg-slate-900">
+                                        <a href="#0"
+                                            class="block truncate transition duration-150 text-slate-200 hover:text-white hover:text-slate-200">
+                                            <div class="flex items-center justify-between">
+                                                <div class="flex items-center"><svg class="w-6 h-6 shrink-0"
+                                                        viewBox="0 0 24 24">
+                                                        <path class="fill-current text-slate-400 !text-indigo-500"
+                                                            d="M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12 12-5.383 12-12S18.617 0 12 0z">
+                                                        </path>
+                                                        <path class="text-indigo-600 fill-current text-slate-600"
+                                                            d="M12 3c-4.963 0-9 4.037-9 9s4.037 9 9 9 9-4.037 9-9-4.037-9-9-9z">
+                                                        </path>
+                                                        <path class="text-indigo-200 fill-current text-slate-400"
+                                                            d="M12 15c-1.654 0-3-1.346-3-3 0-.462.113-.894.3-1.285L6 6l4.714 3.301A2.973 2.973 0 0112 9c1.654 0 3 1.346 3 3s-1.346 3-3 3z">
+                                                        </path>
+                                                    </svg><span
+                                                        class="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">Dashboard</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li class="px-3 py-2 rounded-sm mb-0.5 last:mb-0 false"><a href="#0"
+                                            class="block truncate transition duration-150 text-slate-200 hover:text-white false">
+                                            <div class="flex items-center justify-between">
+                                                <div class="flex items-center"><svg class="w-6 h-6 shrink-0"
+                                                        viewBox="0 0 24 24">
+                                                        <path class="fill-current text-slate-600 false"
+                                                            d="M18.974 8H22a2 2 0 012 2v6h-2v5a1 1 0 01-1 1h-2a1 1 0 01-1-1v-5h-2v-6a2 2 0 012-2h.974zM20 7a2 2 0 11-.001-3.999A2 2 0 0120 7zM2.974 8H6a2 2 0 012 2v6H6v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5H0v-6a2 2 0 012-2h.974zM4 7a2 2 0 11-.001-3.999A2 2 0 014 7z">
+                                                        </path>
+                                                        <path class="fill-current text-slate-400 false"
+                                                            d="M12 6a3 3 0 110-6 3 3 0 010 6zm2 18h-4a1 1 0 01-1-1v-6H6v-6a3 3 0 013-3h6a3 3 0 013 3v6h-3v6a1 1 0 01-1 1z">
+                                                        </path>
+                                                    </svg><span
+                                                        class="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">Profile</span>
+                                                </div>
+
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="px-3 py-2 rounded-sm mb-0.5 last:mb-0 false">
+                                        <a href="{{ route('booking') }}"
+                                            class="block truncate transition duration-150 text-slate-200 hover:text-white false">
+                                            <div class="flex items-center justify-between">
+                                                <div class="flex items-center"><svg class="w-6 h-6 shrink-0"
+                                                        viewBox="0 0 24 24">
+                                                        <path class="fill-current text-slate-400 false"
+                                                            d="M13 6.068a6.035 6.035 0 0 1 4.932 4.933H24c-.486-5.846-5.154-10.515-11-11v6.067Z">
+                                                        </path>
+                                                        <path class="fill-current text-slate-700 false"
+                                                            d="M18.007 13c-.474 2.833-2.919 5-5.864 5a5.888 5.888 0 0 1-3.694-1.304L4 20.731C6.131 22.752 8.992 24 12.143 24c6.232 0 11.35-4.851 11.857-11h-5.993Z">
+                                                        </path>
+                                                        <path class="fill-current text-slate-600 false"
+                                                            d="M6.939 15.007A5.861 5.861 0 0 1 6 11.829c0-2.937 2.167-5.376 5-5.85V0C4.85.507 0 5.614 0 11.83c0 2.695.922 5.174 2.456 7.17l4.483-3.993Z">
+                                                        </path>
+                                                    </svg><span
+                                                        class="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">Booking</span>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                    </li>
+
+                                    <li class="px-3 py-2 rounded-sm mb-0.5 last:mb-0 false">
+                                        <a href="#0"
+                                            class="block truncate transition duration-150 text-slate-200 hover:text-white false">
+                                            <div class="flex items-center justify-between">
+                                                <div class="flex items-center"><svg class="w-6 h-6 shrink-0"
+                                                        viewBox="0 0 24 24">
+                                                        <path class="fill-current text-slate-600 false"
+                                                            d="M8 1v2H3v19h18V3h-5V1h7v23H1V1z"></path>
+                                                        <path class="fill-current text-slate-600 false" d="M1 1h22v23H1z">
+                                                        </path>
+                                                        <path class="fill-current text-slate-400 false"
+                                                            d="M15 10.586L16.414 12 11 17.414 7.586 14 9 12.586l2 2zM5 0h14v4H5z">
+                                                        </path>
+                                                    </svg><span
+                                                        class="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">Booking
+                                                        Status</span>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                    </li>
+                                    <li class="px-3 py-2 rounded-sm mb-0.5 last:mb-0 false"><a aria-current="page"
+                                            class="block truncate transition duration-150 text-slate-200 hover:text-white false active"
+                                            href="/">
+                                            <div class="flex items-center"><svg class="w-6 h-6 shrink-0"
+                                                    viewBox="0 0 24 24">
+                                                    <path class="fill-current text-slate-600 false" d="M1 3h22v20H1z">
+                                                    </path>
+                                                    <path class="fill-current text-slate-400 false"
+                                                        d="M21 3h2v4H1V3h2V1h4v2h10V1h4v2Z"></path>
+                                                </svg><span
+                                                    class="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">History</span>
+                                            </div>
+                                        </a></li>
+                                    <li class="px-3 py-2 rounded-sm mb-0.5 last:mb-0 false">
+                                        <a href="{{ route('manager') }} "
+                                            class="block truncate transition duration-150 text-slate-200 hover:text-white false">
+                                            <div class="flex items-center justify-between">
+                                                <div class="flex items-center"><svg class="w-6 h-6 shrink-0"
+                                                        viewBox="0 0 24 24">
+                                                        <circle class="fill-current text-slate-400 false" cx="18.5"
+                                                            cy="5.5" r="4.5"></circle>
+                                                        <circle class="fill-current text-slate-600 false" cx="5.5"
+                                                            cy="5.5" r="4.5"></circle>
+                                                        <circle class="fill-current text-slate-600 false" cx="18.5"
+                                                            cy="18.5" r="4.5"></circle>
+                                                        <circle class="fill-current text-slate-400 false" cx="5.5"
+                                                            cy="18.5" r="4.5"></circle>
+                                                    </svg><span
+                                                        class="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">Manager</span>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                    </li>
+                                    <li class="px-3 py-2 rounded-sm mb-0.5 last:mb-0">
+                                        <a aria-current="page"
+                                            class="block truncate transition duration-150 text-slate-200 hover:text-white active"
+                                            href="/">
+                                            <div class="flex items-center justify-between">
+                                                <div class="flex items-center grow"><svg class="w-6 h-6 shrink-0"
+                                                        viewBox="0 0 24 24">
+                                                        <path class="fill-current text-slate-600 false"
+                                                            d="M14.5 7c4.695 0 8.5 3.184 8.5 7.111 0 1.597-.638 3.067-1.7 4.253V23l-4.108-2.148a10 10 0 01-2.692.37c-4.695 0-8.5-3.184-8.5-7.11C6 10.183 9.805 7 14.5 7z">
+                                                        </path>
+                                                        <path class="fill-current text-slate-400 false"
+                                                            d="M11 1C5.477 1 1 4.582 1 9c0 1.797.75 3.45 2 4.785V19l4.833-2.416C8.829 16.85 9.892 17 11 17c5.523 0 10-3.582 10-8s-4.477-8-10-8z">
+                                                        </path>
+                                                    </svg><span
+                                                        class="ml-3 text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">Contact
+                                                        Us</span>
+                                                </div>
+
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
-
                         </div>
                     </div>
                 </div>
             @endguest
-            </ul>
-            <!-- end login -->
-        </nav>
-        <main class="py-4">
-            @yield('content')
-        </main>
+        </div>
+
     </div>
-    <script src="https://unpkg.com/flowbite@1.5.4/dist/flowbite.js"></script>
+
+    {{-- </div> --}}
+
+    <div class="grid items-center justify-center h-full grid-cols-8 ml-4">
+        <div class="col-start-2 col-end-9 ">
+
+            <main>
+                <div class="mx-auto mt-4 py-7 sm:px-10 lg:px-8">
+                    <!-- Replace with your content -->
+                    <div class="px-4 py-6 sm:px-0">
+                        <div class="border-4 border-gray-200 border-dashed rounded-lg h-96">
+                            @yield('content')
+                        </div>
+                    </div>
+                    <!-- /End replace -->
+                </div>
+            </main>
+        </div>
+
+    </div>
+
+    {{-- </div> --}}
+
 </body>
 
 </html>

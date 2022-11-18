@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/booking-history', [BookingController::class, 'history'])->name('booking_history');
     Route::get('/edit-booking/{id}', [BookingController::class, 'edit'])->name('edit_booking');
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('manager', [HomeController::class, 'manager'])->name('manager');
     Route::put('/update-booking/{id}', [BookingController::class, 'update'])->name('update-booking');
 
     Route::post('/store', [BookingController::class, 'store'])->name('store');
