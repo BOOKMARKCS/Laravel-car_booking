@@ -178,7 +178,7 @@
                                         </a>
                                     </li>
 
-                                    <li class="px-3 py-2 rounded-sm mb-0.5 last:mb-0 false"><a href="#0"
+                                    <li class="px-3 py-2 rounded-sm mb-0.5 last:mb-0 false"><a href="{{ route('profile') }}"
                                             class="block truncate transition duration-150 text-slate-200 hover:text-white false">
                                             <div class="flex items-center justify-between">
                                                 <div class="flex items-center"><svg class="w-6 h-6 shrink-0"
@@ -220,7 +220,7 @@
                                     </li>
 
                                     <li class="px-3 py-2 rounded-sm mb-0.5 last:mb-0 false">
-                                        <a href="#0"
+                                        <a href="{{ route('booking-status') }}"
                                             class="block truncate transition duration-150 text-slate-200 hover:text-white false">
                                             <div class="flex items-center justify-between">
                                                 <div class="flex items-center"><svg class="w-6 h-6 shrink-0"
@@ -277,7 +277,7 @@
                                     <li class="px-3 py-2 rounded-sm mb-0.5 last:mb-0">
                                         <a aria-current="page"
                                             class="block truncate transition duration-150 text-slate-200 hover:text-white active"
-                                            href="/">
+                                            href="{{ route('contact') }}">
                                             <div class="flex items-center justify-between">
                                                 <div class="flex items-center grow"><svg class="w-6 h-6 shrink-0"
                                                         viewBox="0 0 24 24">
