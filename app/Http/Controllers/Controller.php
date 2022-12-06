@@ -17,7 +17,7 @@ class Controller extends BaseController
     public function manager()
     {
         $data['members'] = Member::orderby('id', 'asc')->paginate(5);
-            return view('admin.manager_user', $data);
+        return view('admin.manager_user', $data);
     }
 
     public function user()
@@ -51,5 +51,17 @@ class Controller extends BaseController
         $members->Image = $request->Image;
         $members->save();
         return redirect()->route('manager')->with('success', 'car has been created.');
+    }
+
+
+
+    // new
+    public function home()
+    {
+        if (auth()->user()->is_admin == 1) {
+            return view('admin.home');
+        } else {
+            return view('user.home');
+        }
     }
 }

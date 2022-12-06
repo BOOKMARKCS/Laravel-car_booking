@@ -33,7 +33,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/booking-status', [BookingController::class, 'status'])->name('booking-status');
     Route::get('/booking-history', [BookingController::class, 'history'])->name('booking_history');
     Route::get('/edit-booking/{id}', [BookingController::class, 'edit'])->name('edit_booking');
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
     Route::put('/update-booking/{id}', [BookingController::class, 'update'])->name('update-booking');
@@ -44,7 +44,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/create_driver', [DriverController::class, 'create_driver'])->name('create.driver');
 
     //
-    Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'adminhome'])->name('admin.home')->middleware('is_admin');
+    // Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'adminhome'])->name('admin.home')->middleware('is_admin');
     Route::get('/manager', [HomeController::class, 'manager'])->name('manager');
     Route::get('/car', [CarController::class, 'car'])->name('car');
     Route::get('/manager-car', [CarController::class, 'manager'])->name('manager-car');
@@ -56,7 +56,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/allow/{id}', [BookingController::class, 'allow'])->name('allow');
     Route::put('/create_allow/{id}', [BookingController::class, 'create_allow'])->name('create_allow');
 
+    // new Route
 
+    Route::get('home', [Controller::class, 'home'])->name('home');
 
 
 
