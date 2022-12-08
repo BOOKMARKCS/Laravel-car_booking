@@ -29,13 +29,21 @@ class BookingController extends Controller
     public function status()
     {
         $data['bookings'] = Booking::orderby('id', 'desc')->paginate(5);
-        return view('user.booking_status', $data);
+        if (auth()->user()->is_admin == 1) {
+            return view('admin.status', $data);
+        } else {
+            return view('user.status', $data);
+        }
     }
 
     public function history()
     {
         $data['bookings'] = booking::orderby('id', 'asc')->paginate(5);
-        return view('user.booking_history', $data);
+        if (auth()->user()->is_admin == 1) {
+            return view('admin.history', $data);
+        } else {
+            return view('user.history', $data);
+        }
     }
 
 
@@ -64,7 +72,7 @@ class BookingController extends Controller
             return redirect()->route('manager')->with('success', 'Booking has been created.');
         } else {
 
-            return redirect()->route('booking-status')->with('success', 'Booking has been created.');
+            return redirect()->route('status')->with('success', 'Booking has been created.');
         }
     }
     public function edit($id)
@@ -90,7 +98,7 @@ class BookingController extends Controller
         $booking->dt_destination = $request->dt_destination;
         $booking->numbers = $request->numbers;
         $booking->save();
-        return redirect()->route('booking-status')->with('success', 'booking has been updated successfully.');
+        return redirect()->route('status')->with('success', 'booking has been updated successfully.');
     }
     public function destroy($id)
     {
@@ -99,7 +107,7 @@ class BookingController extends Controller
         if (auth()->user()->is_admin == 1) {
             return redirect()->route('admin.booking')->with('success', 'booking has been deleted successfully.');
         } else {
-            return redirect()->route('booking-status')->with('success', 'booking has been deleted successfully.');
+            return redirect()->route('status')->with('success', 'booking has been deleted successfully.');
         }
     }
     public function allow($id)
@@ -137,6 +145,5 @@ class BookingController extends Controller
         $booking->save();
         // return redirect()->route('booking')->with('success', 'booking has been updated successfully.');
         return redirect('booking')->with('status', 'We received your message. We will get back to you soon.')->withErrors(['Your message may be a duplicate. Did you refresh the page? We blocked that submission. If you feel this was in error, e-mail us or call us.']);
-    
     }
 }

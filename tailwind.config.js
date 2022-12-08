@@ -12,7 +12,11 @@ module.exports = {
             base: ["16px", "24px"],
             lg: ["20px", "28px"],
             xl: ["24px", "32px"],
-        },
+            '2xl': '1.563rem',
+            '3xl': '1.953rem',
+            '4xl': '2.441rem',
+            '5xl': '3.052rem',
+        }
     },
     plugins: [require("flowbite/plugin")],
 };

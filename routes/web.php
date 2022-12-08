@@ -30,8 +30,7 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/destroy-booking/{id}', [BookingController::class, 'destroy'])->name('destroy_booking');
 
     Route::get('/booking', [BookingController::class, 'booking'])->name('booking');
-    Route::get('/booking-status', [BookingController::class, 'status'])->name('booking-status');
-    Route::get('/booking-history', [BookingController::class, 'history'])->name('booking_history');
+    // Route::get('/booking-status', [BookingController::class, 'status'])->name('booking-status');
     Route::get('/edit-booking/{id}', [BookingController::class, 'edit'])->name('edit_booking');
     // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -59,7 +58,8 @@ Route::middleware(['auth'])->group(function () {
     // new Route
 
     Route::get('home', [Controller::class, 'home'])->name('home');
-
+    Route::get('status', [BookingController::class, 'status'])->name('status');
+    Route::get('history', [BookingController::class, 'history'])->name('history');
 
 
     Route::get('/profile', function () {
